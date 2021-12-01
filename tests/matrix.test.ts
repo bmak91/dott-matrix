@@ -49,17 +49,14 @@ test("both distances methods return the same result", () => {
   let test = ["4 4", "0110", "1000", "0001", "1010"];
   let m = toMatrix(test);
 
-  expect(m.getDistances()).toStrictEqual([
+  let expected = [
     [1, 0, 0, 1],
     [0, 1, 1, 1],
     [1, 2, 1, 0],
     [0, 1, 0, 1],
-  ]);
+  ];
 
-  expect(m.getDistancesBfs()).toStrictEqual([
-    [1, 0, 0, 1],
-    [0, 1, 1, 1],
-    [1, 2, 1, 0],
-    [0, 1, 0, 1],
-  ]);
+  expect(m.getDistances()).toStrictEqual(expected);
+
+  expect(m.getDistancesBfs()).toStrictEqual(expected);
 });
